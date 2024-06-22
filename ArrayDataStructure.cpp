@@ -1,0 +1,10 @@
+// ARRAY IS AN USERDEFINED OR DERIVED DATA STRUCTURE WHICH STORE HOMOGENEOUS DATA TYPE WITH CONTIGUOUS MEMORY LOCATION:
+
+
+
+
+#include <iostream>
+using namespace std;
+int main() {
+
+}

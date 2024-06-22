@@ -2,7 +2,6 @@
 using namespace std;
 template <class T>
 class Number{
- private :
  T num;
  public :
  Number(T n){
