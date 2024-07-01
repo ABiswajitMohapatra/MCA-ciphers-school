@@ -1,58 +1,42 @@
+// Problem Statement
+// Given a staircase of N steps and you can either climb 1 or 2 steps at a given time. The task is to return the count of distinct ways to climb to the top.
+// Note: The order of the steps taken matters.
+
+// Examples:
+
+// Input: N = 3
+// Output: 3
+// Explanation:
+
+// There are three distinct ways of climbing a staircase of 3 steps :
+
+// [1, 1, 1], [2, 1] and [1, 2].
+
+// Another axample
+// Input:  N = 2
+// Output: 2
+// Explanation:
+
+// There are two distinct ways of climbing a staircase of 3 steps :
+
+// [1, 1] and [2].
+
 #include <iostream>
 using namespace std;
 
-class Students{
-    private:
-    string name;
-    int roll_no;
-    int age;
-    char grade;
-    public:
-    Students(){}
-    Students(string name,int age,int roll_no,char grade){
-        this->name = name;
-        this->age = age;
-        this->roll_no = roll_no;
-        this->grade = grade;
+int countWaysToClimbStairs(int N) {
+    // Base cases
+    if (N == 0) {
+        return 1;
+    } else if (N == 1) {
+        return 1;
     }
-    //Getter and Setters
-    void setName(string name){
-        this->name = name;
-    }
-    void setRoll_no(int roll_no){
-        this->roll_no = roll_no;
-    }
-    void setAge(int age){
-        this->age = age;
-    }
-    void setGrade(char grade){
-        this->grade = grade;
-    }
-    string getName(){
-        return name;
-    }
-    int getAge(){
-        return age;
-    }
-    int getRoll_no(){
-        return roll_no;
-    }
-    char getGrade(){
-        return grade;
-    }
-    void print(){
-        cout<<"The name of the students is "<<name<<"\nThe age of the student is "<<age<<"\nThe Roll no. of the student is "<<roll_no<<endl;
-        cout<<"The grade of the student is "<<grade;
-    }
-};
+    
+    return countWaysToClimbStairs(N - 1) + countWaysToClimbStairs(N - 2);
+}
 
 int main() {
-    Students s1("Anshul",20,07,'A');
-    cout<<"Details before updating:\n";
-    s1.print();
-    s1.setGrade('O');
-    s1.setRoll_no(1);
-    cout<<"\nDetails after updating:\n";
-    s1.print();
-    return 0;
+    int numberOfSteps;
+    cin>>numberOfSteps;
+    cout<<"Number of ways = "<<countWaysToClimbStairs(numberOfSteps);
 }
